@@ -66,8 +66,6 @@ The program will initialize the lattice, run the simulation loop, and output res
 `gauge_fields.txt` as the gauge data and `fermion_fields.txt` as the fermion data are saved on the same directory after performing the simulation.
 
 -----------
-===========
-
 Reference:
 [Introduction to Lattice QCD by Hideo Matsufuru](https://research.kek.jp/people/matufuru/Research/Docs/Lattice/Introduction/note_lattice.pdf)
 
