@@ -20,7 +20,7 @@ This file defines a module named `lattice_qcd` that includes:
 
 - **Data Structures**:
   - `U`: A multidimensional complex array representing the gauge fields on the lattice. These fields correspond to the SU(3) matrices associated with each link.
-  - `psi`: A complex array representing the fermion (quark) fields on the lattice.
+  - `psi (ψ)`: A complex array representing the fermion (quark) fields on the lattice.
 
 - **Subroutines**:
   - `initialize_gauge_fields()`: Initializes the gauge fields (`U`) to identity matrices as the starting point for the simulation.
