@@ -67,6 +67,7 @@ The program will initialize the lattice, run the simulation loop, and output res
 
 -----------
 ===========
+
 Reference:
 [Introduction to Lattice QCD by Hideo Matsufuru](https://research.kek.jp/people/matufuru/Research/Docs/Lattice/Introduction/note_lattice.pdf)
 
