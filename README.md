@@ -1,4 +1,4 @@
-![Logo]( PbPbperipheral.png)
+![Logo](Cover_II.png)
 
 # Simulating QGP from Ultra-Relativistic Proton Collisions
 
