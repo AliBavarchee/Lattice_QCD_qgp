@@ -1,4 +1,5 @@
 ## LQCD Visualization
+![Logo](FermisonFields.png)
 
 **`Lqcd_Visualization_III.py`** visualizes the output of a lattice QCD simulation derived from `lattice_qcd.f90`. It takes two files as input:
 
