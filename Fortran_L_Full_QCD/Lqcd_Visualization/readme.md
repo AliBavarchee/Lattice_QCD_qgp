@@ -12,4 +12,6 @@ The code then uses Plotly to create two 3D scatter plots:
 * **3D Visualization of Gauge Fields:** This plot shows the real part of the gauge field (U) at each lattice point. The points are colored according to the value of the real part of U, with a Plasma colormap.
 
 This will generate **two** separate plots in your web browser, visualizing the fermion and gauge fields from the simulation data.
+
+
 ![Logo](Heatmap_fermions.png)
