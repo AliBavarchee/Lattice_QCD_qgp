@@ -7,7 +7,6 @@
 ## Lattice QCD Visualization Tool
 
 ---
-### Overview
 
 This repository branch contains the script `lqcd_visualization_viv_fin.py` (and `LQCD_Visualization_VIV_fin.ipynb` as well), which provides tools for visualizing and demonstrating the evolution of Lattice Quantum Chromodynamics (LQCD) fields. The script leverages Python's Plotly library to create interactive 3D animations that illustrate the dynamics of fermion and gauge fields on a lattice.
 
