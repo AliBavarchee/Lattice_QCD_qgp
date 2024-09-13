@@ -1,6 +1,6 @@
 # Naïve Lattice Full QCD Simulation
 
-This repository contains Fortran code for simulating Quantum Chromodynamics (QCD) on a discrete lattice. The code provides tools to initialize and evolve gauge fields, calculate observables, and analyze the behavior of QCD in a non-perturbative regime.
+This folder contains Fortran code for simulating Quantum Chromodynamics (QCD) on a discrete lattice. The code provides tools to initialize and evolve gauge fields, calculate observables, and analyze the behavior of QCD in a non-perturbative regime.
 
 ## Fortran Codes
 
