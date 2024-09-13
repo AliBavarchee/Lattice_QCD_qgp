@@ -1,69 +1,49 @@
 # Naïve Lattice Full QCD Simulation
 
-This repository contains Fortran code for simulating Quantum Chromodynamics (QCD) on a discrete lattice. The code provides tools to initialize and evolve gauge fields, calculate observables, and analyze the behavior of QCD in a non-perturbative regime.
+The Fortran90 code is provided for a simulation for Lattice QCD, using the Hamiltonian Monte Carlo (HMC) algorithm.
 
-## Fortran Codes
+### Key Components:
 
-- **`lattice_qcd.f90`**: Defines the core module for the lattice QCD simulation. It contains parameters, data structures, and subroutines necessary for initializing and manipulating the lattice fields.
-- **`main.f90`**: The main program file that drives the simulation. It sets up the initial conditions, performs the main simulation loop, and handles data output.
+1. **Parameters and Variables:**
+   - The code defines parameters such as lattice dimensions (`nx`, `ny`, `nz`, `nt`), the number of colors (`Nc`), gauge coupling (`beta`), step size for integration (`epsilon`), and the number of leapfrog steps (`Nsteps`).
+   - `U` represents gauge fields, `psi` represents fermion fields, and `P` represents conjugate momenta.
 
+2. **Initialization:**
+   - **Gauge Fields:** Initialized to identity matrices.
+   - **Fermion Fields:** Initialized with random complex values.
+   - **Momenta:** Initialized with random complex values.
 
-### `lattice_qcd.f90`
+3. **Hamiltonian Calculation:**
+   - **Kinetic Energy:** Computed from conjugate momenta.
+   - **Potential Energy:** Computed using Wilson gauge action.
 
-This file defines a module named `lattice_qcd` that includes:
+4. **Leapfrog Integration:**
+   - **Momentum Update:** A half-step update for momenta.
+   - **Gauge Field Update:** A full-step update for gauge fields.
+   - **Momentum Update:** Another half-step update for momenta.
 
-- **Parameters and Lattice Setup**:
-  - `dim`: Number of space-time dimensions (typically 4).
-  - `nx, ny, nz, nt`: Lattice sizes in the x, y, z, and t dimensions.
-  - `Nc`: Number of colors in SU(3) gauge theory (set to 3 for QCD).
-  - `beta`: Gauge coupling parameter, a key input for simulations.
+5. **Hamiltonian Monte Carlo (HMC):**
+   - **Acceptance Step:** Uses the Metropolis criterion to decide whether to accept or reject the new configuration based on the change in Hamiltonian.
 
-- **Data Structures**:
-  - `U`: A multidimensional complex array representing the gauge fields on the lattice. These fields correspond to the SU(3) matrices associated with each link.
-  - `psi (ψ)`: A complex array representing the fermion (quark) fields on the lattice.
+### Some Improvements and Corrections should be addressed:
 
-- **Subroutines**:
-  - `initialize_gauge_fields()`: Initializes the gauge fields (`U`) to identity matrices as the starting point for the simulation.
-  - Additional subroutines for updating gauge fields, applying boundary conditions, and calculating observables.
+1. **Random Number Generation for Acceptance Probability:**
+   The code for Metropolis acceptance criteria seems incorrect: task &#10003
 
-### `main.f90`
+2. **Restoring Old Configuration:**
+   The code is ment to restore the old configuration if the new configuration is rejected but does not implement it. It has to save the old configuration before the leapfrog integration and restore it if needed!
 
-This is the main entry point for running the lattice QCD simulation. It includes:
+3. **Hamiltonian Calculation - Trace Function:**
+   The `trace` function is declared as external but not implemented. It should be provided the implementation or use a standard Fortran trace function! Mission completed ✅ by `matmul` combined with `trace`.  &#10003
 
-- **Initialization**:
-  - Calls to subroutines in `lattice_qcd.f90` to set up the initial state of the lattice.
-  
-- **Simulation Loop**:
-  - The main loop that iteratively updates the lattice fields and computes relevant observables.
+4. **Potential Energy Calculation:**
+   We need to ensure the calculation of potential energy aligns with the lattice gauge action used in your specific setup. Double-check the formula for the Wilson gauge action to make sure it’s implemented correctly. &#10003
 
-- **Data Output**:
-  - Code for saving or displaying the results of the simulation, such as gauge field configurations and computed quantities like Wilson loops.
+5. **Comments and Documentation:**
 
-## EXECUTION
+6. **Error Handling and Debugging:**
+   It is nice to add error handling or debug print statements to track issues during execution.
 
-### Compiling the Code
-
-To compile the code, run the following command in your terminal:
-
-```bash
-gfortran -o lattice_qcd_simulation main.f90 lattice_qcd.f90
-```
-
-This will generate an executable named `lattice_qcd_simulation`.
-
-### Running the Simulation
-
-To run the simulation, execute the following command:
-
-```bash
-./lattice_qcd_simulation
-```
-
-The program will initialize the lattice, run the simulation loop, and output results to the terminal or specified files.
-
-## Outputs
-
-`gauge_fields.txt` as the gauge data and `fermion_fields.txt` as the fermion data are saved on the same directory after performing the simulation.
 
 -----------
 Reference:
