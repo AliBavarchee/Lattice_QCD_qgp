@@ -7,12 +7,18 @@ program main
   ! Initialize fields
   call initialize_gauge_fields()
   call initialize_fermion_fields()
+  call initialize_momenta()  ! Make sure momenta are initialized as well
 
   ! Perform lattice updates
-  call update_gauge_fields()
+  call hmc()  ! Use the HMC algorithm for updates
 
   ! Print some gauge field values to the console for inspection
-  x = 2; y = 1; z = 1; t = 2; mu = 4
+  x = 10
+  y = 10
+  z = 10
+  t = 10
+  mu = 4  ! Ensure mu is within the valid range [1, dim]
+
   print *, 'Gauge field U at (x, y, z, t) = (', x, ',', y, ',', z, ',', t, ') and direction mu =', mu
   do i = 1, Nc
     do j = 1, Nc
