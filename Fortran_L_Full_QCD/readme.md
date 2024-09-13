@@ -28,21 +28,21 @@ The Fortran90 code is provided for a simulation for Lattice QCD, using the Hamil
 ### Some Improvements and Corrections should be addressed:
 
 1. **Random Number Generation for Acceptance Probability:**
-   The code for Metropolis acceptance criteria seems incorrect: task &#10003
+   The code for Metropolis acceptance criteria seems incorrect! :white_check_mark:
 
 2. **Restoring Old Configuration:**
-   The code is ment to restore the old configuration if the new configuration is rejected but does not implement it. It has to save the old configuration before the leapfrog integration and restore it if needed!
+   The code is ment to restore the old configuration if the new configuration is rejected but does not implement it. It has to save the old configuration before the leapfrog integration and restore it if needed! :x:
 
 3. **Hamiltonian Calculation - Trace Function:**
-   The `trace` function is declared as external but not implemented. It should be provided the implementation or use a standard Fortran trace function! Mission completed ✅ by `matmul` combined with `trace`.  &#10003
+   The `trace` function is declared as external but not implemented. It should be provided the implementation or use a standard Fortran trace function! ===> Mission completed by `matmul` combined with `trace`. :white_check_mark:
 
 4. **Potential Energy Calculation:**
-   We need to ensure the calculation of potential energy aligns with the lattice gauge action used in your specific setup. Double-check the formula for the Wilson gauge action to make sure it’s implemented correctly. &#10003
+   We need to ensure the calculation of potential energy aligns with the lattice gauge action used in your specific setup. Double-check the formula for the Wilson gauge action to make sure it’s implemented correctly. :white_check_mark:
 
 5. **Comments and Documentation:**
 
 6. **Error Handling and Debugging:**
-   It is nice to add error handling or debug print statements to track issues during execution.
+   It is nice to add error handling or debug print statements to track issues during execution. :x:
 
 
 -----------
