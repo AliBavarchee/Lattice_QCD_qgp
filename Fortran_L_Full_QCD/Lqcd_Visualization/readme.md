@@ -30,8 +30,9 @@ This repository branch contains the script `lqcd_visualization_viv_fin.py` (and 
 
 ![Logo](Heatmap_fermions.png)
 
-```python
+---
 ### PS: Load and read the data in python env:
+```python
 # Load the fermion field data as a pandas DataFrame
 def load_fermion_fields_as_dataframe(filename):
     # Read the file
