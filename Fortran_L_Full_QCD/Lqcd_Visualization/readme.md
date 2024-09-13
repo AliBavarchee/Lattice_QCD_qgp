@@ -56,9 +56,37 @@ def load_fermion_fields_as_dataframe(filename):
 
     return df_fermion
 
-# Filename for fermion fields
+# Fname
 fermion_field_file = "fermion_fields.txt"
 
-# Load the data as a pandas DataFrame
+# Load the data as pd dataframe
 df_fermion = load_fermion_fields_as_dataframe(fermion_field_file)
 
+### Taking care of bosonic field data
+
+# Load the gauge field data as a pandas DataFrame
+def load_gauge_fields_as_dataframe(filename):
+    # Read the file
+    with open(filename) as f:
+        data = f.read().split()
+
+    # Convert to a NumPy array of floats
+    data = np.array(data, dtype=float)
+
+    # Ensure the length of the data is divisible by 12 (gauge data has 12 columns)
+    data = data[:len(data) - (len(data) % 12)]  # Truncate excess data silently
+
+    # Reshape the data into rows of 12 columns
+    data = data.reshape(-1, 12)
+
+    # Create a DataFrame with appropriate column names
+    columns = ['x', 'y', 'z', 't', 'i', 'j', 'real_U1', 'imag_U1', 'real_U2', 'imag_U2', 'real_U3', 'imag_U3']
+    df_gauge = pd.DataFrame(data, columns=columns)
+
+    return df_gauge
+
+gauge_field_file = "gauge_fields.txt"
+
+# Load the data into pd dataframes
+
+df_gauge = load_gauge_fields_as_dataframe(gauge_field_file)
