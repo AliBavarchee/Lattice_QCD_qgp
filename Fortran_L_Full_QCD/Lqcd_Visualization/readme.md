@@ -1,5 +1,5 @@
 ## LQCD Visualization
-![LQCD Evolution Animation](lattice_qcd_evolution_vv.mp4)
+[![LQCD Evolution Animation](lattice_qcd_evolution_vv.mp4)
 
 
 **`Lqcd_Visualization_III.py`** visualizes the output of a lattice QCD simulation derived from `lattice_qcd.f90`. It takes two files as input:
